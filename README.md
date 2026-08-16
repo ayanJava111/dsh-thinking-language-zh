@@ -62,6 +62,7 @@ The plugin exports the standard plugin contract (`name`, `inject: ['systemPrompt
 - **What the model sees**: one extra prompt section between the persona and tool guidance, e.g. `请始终使用中文进行思考、推理与回复：你的思考过程（reasoning）与所有输出一律使用中文，包括对工具调用结果的解读与最终回答。` — every request, for every agent on the deployment.
 - **Token effect**: a fixed cost per request, equal to the rendered instruction text (about 60 tokens for the default).
 - **KV-cache effect**: the section is stable for a given config, so prompt-prefix caching stays intact. Editing the text changes the prefix from the first changed token.
+<img width="2202" height="969" alt="image" src="https://github.com/user-attachments/assets/102919dd-015d-4d21-b4a1-aef4ac2aecad" />
 
 ## Develop
 
