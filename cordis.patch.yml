@@ -1,0 +1,12 @@
+# The dsh-thinking-language bundle layer: one insert row whose default config
+# is the Chinese thinking-mode instruction. A deployment overrides the text
+# (or the whole row) in a later layer — its profile cordis.patch.yml or a
+# `--patch` overlay — without touching this package. Patch layers replace the
+# targeted row's whole `config`, so an override restates every key it wants
+# (see docs/user/develop/basic/publish.md in the harness repository).
+- insert:
+    - id: thinking-language
+      name: dsh-thinking-language
+      config:
+        text: >-
+          请始终使用中文进行思考、推理与回复：你的思考过程（reasoning）与所有输出一律使用中文，包括对工具调用结果的解读与最终回答。
