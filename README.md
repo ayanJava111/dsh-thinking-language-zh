@@ -5,6 +5,8 @@
 A one-section [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) bundle that pins the language an agent **thinks, reasons, and replies** in. The shipped default is Chinese mode: once installed, every agent composed by the deployment gets an ordered system-prompt section right after its persona telling the model to think and answer in Chinese.
 
 It works on any DeepSeek Harness deployment (Web UI, headless, ACP) because it only contributes a [system-prompt section](https://github.com/deepseek-ai/deepseek-harness/blob/main/packages/core/system-prompt/README.md) — no tools, no shell access, no model changes.
+<img width="2202" height="969" alt="image" src="https://github.com/user-attachments/assets/1bb77dfb-4373-423d-8749-0ce83bfaa929" />
+
 
 ## Install
 
@@ -62,7 +64,6 @@ The plugin exports the standard plugin contract (`name`, `inject: ['systemPrompt
 - **What the model sees**: one extra prompt section between the persona and tool guidance, e.g. `请始终使用中文进行思考、推理与回复：你的思考过程（reasoning）与所有输出一律使用中文，包括对工具调用结果的解读与最终回答。` — every request, for every agent on the deployment.
 - **Token effect**: a fixed cost per request, equal to the rendered instruction text (about 60 tokens for the default).
 - **KV-cache effect**: the section is stable for a given config, so prompt-prefix caching stays intact. Editing the text changes the prefix from the first changed token.
-<img width="2202" height="969" alt="image" src="https://github.com/user-attachments/assets/102919dd-015d-4d21-b4a1-aef4ac2aecad" />
 
 ## Develop
 
